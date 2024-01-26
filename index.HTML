@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIAL</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #principal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .subdiv {
+            position: absolute;
+            background-color: white;
+        }
+
+        #izquierda {
+            margin-top: 200px;
+            margin-left: 200px;
+            width: 600px;
+            height: 700px;
+            background-image: url('BACKIZQ.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        #imgbanner-container {
+            position: absolute;
+            top: 5px;
+            left: 15px;
+        }
+
+        #imgbanner {
+            width: 650px;
+            height: 300px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            object-fit: flex;
+            z-index: 1;
+            position: relative;
+        }
+
+        #iniciarJuegoButton,
+        #barajarboton,
+        #reiniciar,
+        #igualesboton {
+            position: absolute;
+            color: white;
+            font-weight: bold;
+            font-style: italic;
+            border: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px white;
+            width: 400px;
+            height: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+
+        #iniciarJuegoButton {
+            margin-top: 40px;
+            margin-left: 250px;
+            background-color: darkgreen;
+        }
+
+        #barajarboton {
+            margin-top: 600px;
+            margin-left: 80px;
+            background-color: darkred;
+        }
+	#igualesboton {
+            margin-top: 480px;
+            margin-left: 90px;
+            background-color: darkorange;
+        }
+	#reiniciar {
+            margin-top: 480px;
+            margin-left: 90px;
+            background-color: darkorange;
+        }
+
+
+        #iniciarJuegoButton:hover,
+        #barajarboton:hover,
+	#igualesboton:hover {
+            transform: scale(1.1);
+        }
+
+        #divDataGame {
+            line-height: 50px;
+            text-align: center;
+            margin-top: 100px;
+            margin-left: 50px;
+            width: 500px;
+            height: 50px;
+            background-color: black;
+            font-size: 18px;
+            position: absolute;
+            border: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px white;
+            color: white;
+        }
+        #divDataGame2 {
+            line-height: 50px;
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 800px;
+            width: 600px;
+            height: 50px;
+            background-color: black;
+            font-size: 18px;
+            position: absolute;
+            border: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px white;
+            color: white;
+        }
+
+        #cardJug,
+        #cardPc,
+        #cardJug1,
+        #cardJug2,
+        #cardJug3 {
+            position: absolute;
+            background-image: url('ruedas/fondcard.jpg');
+            color: white;
+            border: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px white;
+            width: 200px;
+            height: 300px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #cardJug {
+            margin-top: 180px;
+            margin-left: 50px;
+        }
+
+        #cardPc {
+            margin-top: 180px;
+            margin-left: 350px;
+        }
+
+        #cardJug1 {
+            margin-top: 510px;
+            margin-left: 0px;
+            width: 150px;
+            height: 230px;
+        }
+
+        #cardJug2 {
+            margin-top: 510px;
+            margin-left: 200px;
+            width: 150px;
+            height: 230px;
+        }
+
+        #cardJug3 {
+            margin-top: 510px;
+            margin-left: 400px;
+            width: 150px;
+            height: 230px;
+        }
+
+        #cardJug1:hover,
+        #cardJug2:hover,
+        #cardJug3:hover {
+            transform: scale(1.1);
+        }
+        #ventana {
+            text-align: center;
+            position: absolute;
+            color: white;
+            font-weight: bold;
+            font-style: italic;
+            border: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px white;
+            width: 150px;
+            height: 100px;
+            margin-top: 250px;
+            margin-left: 220px;
+            background-color: BLACK;
+        }
+
+        #jerarquiaimg {
+            border: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px white;
+            position: absolute;
+            margin-top: 100px;
+            margin-left: 600px;
+            width: 100px;
+            height: 600px;
+            background-image: url('ruedas/valor.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+	#derecha {
+            top: 300px;
+            background-image: url('ruedas/MAP.jpeg');
+            background-repeat: no-repeat;
+            left: 1000px;
+            width: 600px;
+            height: 600px;
+            z-index: 1;
+
+        }
+
+     #zona1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 0px;
+            margin-left: 0px;
+            z-index: 2;
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+     #zona2 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top:  0px;
+            margin-left: 200px;
+            z-index: 2;
+	    background-color: rgba(255, 0, 0, 0.5);
+        }
+     #zona3 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 0px;
+            margin-left: 400px;
+            z-index: 2;
+	    background-color: rgba(255, 0, 0, 0.5);
+        }
+     #zona4 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 200px;
+            margin-left: 0px;
+            z-index: 2;
+	    background-color: rgba(255, 0, 0, 0.5);
+        }
+     #zona5 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 200px;
+            margin-left: 200px;
+            z-index: 2;
+	    background-color: rgba(255, 0, 0, 0.5);
+        }
+     #zona6 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 200px;
+            margin-left: 400px;
+            z-index: 2;
+	    background-color: rgba(255, 0, 0, 0.5);
+        }
+     #zona7 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 400px;
+            margin-left: 0px;
+            z-index: 2;
+	    background-color: rgba(255, 0, 0, 0.5);
+        }
+     #zona8 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 400px;
+            margin-left: 200px;
+            z-index: 2;
+	    background-color: rgba(255, 0, 0, 0.5);
+        }
+     #zona9 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin-top: 400px;
+            margin-left: 400px;
+            z-index: 2;
+	    background-color: rgba(255, 0, 0, 0.5);
+        }
+
+@keyframes imageAnimation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animation {
+  animation: imageAnimation 1s infinite;
+}
+       
+    </style>
+</head>
+
+<body>
+
+    <div id="principal">
+        <div id="imgbanner-container">
+            <img src="logo.png" alt="Banner.Image" id="imgbanner">
+        </div>
+        <div id="izquierda" class="subdiv">
+            <button id="iniciarJuegoButton" class="animation" onclick="iniciarJuego()">INICIAR JUEGO</button>
+            <div id="divDataGame" class="divDataGame"></div>
+            <div id="divDataGame2" class="divDataGame2"></div>
+            <img id="jerarquiaimg">
+            <img id="cardPc">
+            <img id="cardJug1" onclick="partidaCard1()">
+            <img id="cardJug2" onclick="partidaCard2()">
+            <img id="cardJug3" onclick="partidaCard3()">
+            <img id="cardJug">
+            <button id="barajarboton" class="animation" onclick="barajar()" style="display: none;">BARAJAR</button>
+            <button id="igualesboton" class="animation" onclick="realizarFusion()" style="display: none;">FUSIONAR CARTAS</button>
+            <button id="reiniciar" onclick="reiniciarPagina()"> CONTINUAR ....</button>
+            <div id="ventana1"></div>
+        </div>
+		<div id="derecha" class="subdiv">
+		<button id="zona1"></button>
+		<button id="zona2"></button>
+		<button id="zona3"></button>
+		<button id="zona4"></button>
+		<button id="zona5"></button>
+		<button id="zona6"></button>
+		<button id="zona7"></button>
+		<button id="zona8"></button>
+		<button id="zona9"></button>
+                <div id="nivelText"></div>
+        </div>
+
+    </div>
+
+        <script>
+           
+
+window.onload = paginaCargada;
+   function paginaCargada() {
+    divDataGame.style.color = "white";
+    divDataGame.textContent = "PRESIONA INICIAR JUEGO PARA COMENZAR..";
+    igualesboton.style.display = "none";
+    reiniciar.style.display = "none";
+    cardPc.style.display = "none";
+    cardJug.style.display = "none";
+    cardJug1.style.display = "none";
+    cardJug2.style.display = "none";
+    cardJug3.style.display = "none";
+    gerarquia.style.display = "none";
+    zona1.style.backgroundColor = "rgba(0, 255, 0, 0.5)";
+        }
+
+var naipes = 3;
+var barJug1 = numeroRandom(1, 7);
+var barJug2 = numeroRandom(1, 7);
+var barJug3 = numeroRandom(1, 7);
+var select = 0;
+var pc1 = numeroRandomPc(1, 7);
+var pc2 = numeroRandomPc(1, 7);
+var pc3 = numeroRandomPc(1, 7);
+var partidas = 0;
+var fusionadajug = 0;
+var fusionadaPc = 0;
+var ganapc = 0;
+var ganaJug = 0;
+var miTexto = "PARTIDA: " + partidas + " PC: " + ganapc + " JUGADOR: " + ganaJug; 
+
+	    
+
+            function iniciarJuego() {
+                iniciarJuegoButton.style.display = "none";
+                barajarboton.style.display = "block";
+                cardPc.style.display = "block";
+                cardJug.style.display = "block";
+                cardJug1.style.display = "block";
+                cardJug2.style.display = "block";
+                cardJug3.style.display = "block";
+                divDataGame.style.display = "block";
+	        divDataGame.style.backgroundColor = "black";
+                divDataGame.textContent = "COMBATE!! : PRESIONA BARAJAR...";
+                gerarquia.style.display = "block";
+		
+		
+
+       }
+
+            function numeroRandom(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function numeroRandomPc(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function barajar() {
+                barajarboton.style.display = "none";
+		divDataGame.textContent = "SELECCIONA UNA CARTA PARA JUGAR...";
+                switch (barJug1) {
+                    case 1:
+                        cardJug1.style.backgroundImage = "url('ruedas/1.png')";
+                        break;
+                    case 2:
+                        cardJug1.style.backgroundImage = "url('ruedas/2.png')";
+                        break;
+                    case 3:
+                        cardJug1.style.backgroundImage = "url('ruedas/3.png')";
+                        break;
+                    case 4:
+                        cardJug1.style.backgroundImage = "url('ruedas/4.png')";
+                        break;
+                    case 5:
+                        cardJug1.style.backgroundImage = "url('ruedas/5.png')";
+                        break;
+                    case 6:
+                        cardJug1.style.backgroundImage = "url('ruedas/6.png')";
+                        break;
+                    case 7:
+                        cardJug1.style.backgroundImage = "url('ruedas/7.png')";
+                        break;
+                }
+
+                
+                switch (barJug2) {
+                    case 1:
+                        cardJug2.style.backgroundImage = "url('ruedas/1.png')";
+                        break;
+                    case 2:
+                        cardJug2.style.backgroundImage = "url('ruedas/2.png')";
+                        break;
+                    case 3:
+                        cardJug2.style.backgroundImage = "url('ruedas/3.png')";
+                        break;
+                    case 4:
+                        cardJug2.style.backgroundImage = "url('ruedas/4.png')";
+                        break;
+                    case 5:
+                        cardJug2.style.backgroundImage = "url('ruedas/5.png')";
+                        break;
+                    case 6:
+                        cardJug2.style.backgroundImage = "url('ruedas/6.png')";
+                        break;
+                    case 7:
+                        cardJug2.style.backgroundImage = "url('ruedas/7.png')";
+                        break;
+                }
+
+                
+                switch (barJug3) {
+                    case 1:
+                        cardJug3.style.backgroundImage = "url('ruedas/1.png')";
+                        break;
+                    case 2:
+                        cardJug3.style.backgroundImage = "url('ruedas/2.png')";
+                        break;
+                    case 3:
+                        cardJug3.style.backgroundImage = "url('ruedas/3.png')";
+                        break;
+                    case 4:
+                        cardJug3.style.backgroundImage = "url('ruedas/4.png')";
+                        break;
+                    case 5:
+                        cardJug3.style.backgroundImage = "url('ruedas/5.png')";
+                        break;
+                    case 6:
+                        cardJug3.style.backgroundImage = "url('ruedas/6.png')";
+                        break;
+                    case 7:
+                        cardJug3.style.backgroundImage = "url('ruedas/7.png')";
+                        break;
+               }
+if (barJug1 === barJug2||barJug1 === barJug3||barJug2 === barJug3) {
+    igualesboton.style.display = "block";
+    fusionar();
+} else {
+    // Realizar acciones si no son iguales
+}
+     
+            }
+
+            function partidaPc1() {
+                
+                switch (pc1) {
+                    case 1:
+                        cardPc.style.backgroundImage = "url('ruedas/1.png')";
+                        break;
+                    case 2:
+                        cardPc.style.backgroundImage = "url('ruedas/2.png')";
+                        break;
+                    case 3:
+                        cardPc.style.backgroundImage = "url('ruedas/3.png')";
+                        break;
+                    case 4:
+                        cardPc.style.backgroundImage = "url('ruedas/4.png')";
+                        break;
+                    case 5:
+                        cardPc.style.backgroundImage = "url('ruedas/5.png')";
+                        break;
+                    case 6:
+                        cardPc.style.backgroundImage = "url('ruedas/6.png')";
+                        break;
+                    case 7:
+                        cardPc.style.backgroundImage = "url('ruedas/7.png')";
+                        break;
+                }
+
+            }
+function partidaPc2() {
+                
+                switch (pc2) {
+                    case 1:
+                        cardPc.style.backgroundImage = "url('ruedas/1.png')";
+                        break;
+                    case 2:
+                        cardPc.style.backgroundImage = "url('ruedas/2.png')";
+                        break;
+                    case 3:
+                        cardPc.style.backgroundImage = "url('ruedas/3.png')";
+                        break;
+                    case 4:
+                        cardPc.style.backgroundImage = "url('ruedas/4.png')";
+                        break;
+                    case 5:
+                        cardPc.style.backgroundImage = "url('ruedas/5.png')";
+                        break;
+                    case 6:
+                        cardPc.style.backgroundImage = "url('ruedas/6.png')";
+                        break;
+                    case 7:
+                        cardPc.style.backgroundImage = "url('ruedas/7.png')";
+                        break;
+                }
+
+            }
+function partidaPc3() {
+                
+                switch (pc3) {
+                    case 1:
+                        cardPc.style.backgroundImage = "url('ruedas/1.png')";
+                        break;
+                    case 2:
+                        cardPc.style.backgroundImage = "url('ruedas/2.png')";
+                        break;
+                    case 3:
+                        cardPc.style.backgroundImage = "url('ruedas/3.png')";
+                        break;
+                    case 4:
+                        cardPc.style.backgroundImage = "url('ruedas/4.png')";
+                        break;
+                    case 5:
+                        cardPc.style.backgroundImage = "url('ruedas/5.png')";
+                        break;
+                    case 6:
+                        cardPc.style.backgroundImage = "url('ruedas/6.png')";
+                        break;
+                    case 7:
+                        cardPc.style.backgroundImage = "url('ruedas/7.png')";
+                        break;
+                }
+
+            }
+
+
+function partidaCard1() {
+    igualesboton.style.display = "none";
+    switch (barJug1) {
+        case 1:
+            cardJug.style.backgroundImage = "url('ruedas/1.png')";
+            break;
+        case 2:
+            cardJug.style.backgroundImage = "url('ruedas/2.png')";
+            break;
+        case 3:
+            cardJug.style.backgroundImage = "url('ruedas/3.png')";
+            break;
+        case 4:
+            cardJug.style.backgroundImage = "url('ruedas/4.png')";
+            break;
+        case 5:
+            cardJug.style.backgroundImage = "url('ruedas/5.png')";
+            break;
+        case 6:
+            cardJug.style.backgroundImage = "url('ruedas/6.png')";
+            break;
+        case 7:
+            cardJug.style.backgroundImage = "url('ruedas/7.png')";
+            break;
+    }
+    cardJug1.style.display= "none";
+    select = barJug1;
+    partidaPc1();
+    setTimeout(function () {
+        if (select < pc1) {
+            divDataGame.style.backgroundColor = "red";
+            divDataGame.textContent = "GANA LA PC";
+            disparo.style.display = "block";
+            ganapc++;
+        } else if (select > pc1) {
+            divDataGame.style.backgroundColor = "green";
+            divDataGame.textContent = "GANA JUGADOR";
+            ganaJug++;
+        } else {
+            divDataGame.style.backgroundColor = "black";
+            divDataGame.textContent = "EMPATE";
+        }
+
+    }, 50);
+
+    naipes--;
+    partidas++;
+
+    setTimeout(function () {
+        if (naipes === 0) {
+            divDataGame.style.backgroundColor = "black";
+            divDataGame.textContent = "FINALIZO EL JUEGO";
+
+            setTimeout(function () {
+                if (ganapc < ganaJug) {
+                    divDataGame.style.backgroundColor = "green";
+                    divDataGame.textContent = "GANA EL JUEGO: JUGADOR";
+                     reiniciar.style.display = "block";
+                }
+                if (ganapc > ganaJug) {
+                    divDataGame.style.backgroundColor = "red";
+                    divDataGame.textContent = "GANA EL JUEGO: PC";
+                    reiniciar.style.display = "block";
+                }
+            }, 1000); // Esperar 1 segundo antes de mostrar el resultado final
+        }
+    }, 2000); // Esperar 1 segundo después de mostrar el resultado de la partida
+
+}
+
+function partidaCard2() {
+igualesboton.style.display = "none";
+    switch (barJug2) {
+        case 1:
+            cardJug.style.backgroundImage = "url('ruedas/1.png')";
+            break;
+        case 2:
+            cardJug.style.backgroundImage = "url('ruedas/2.png')";
+            break;
+        case 3:
+            cardJug.style.backgroundImage = "url('ruedas/3.png')";
+            break;
+        case 4:
+            cardJug.style.backgroundImage = "url('ruedas/4.png')";
+            break;
+        case 5:
+            cardJug.style.backgroundImage = "url('ruedas/5.png')";
+            break;
+        case 6:
+            cardJug.style.backgroundImage = "url('ruedas/6.png')";
+            break;
+        case 7:
+            cardJug.style.backgroundImage = "url('ruedas/7.png')";
+            break;
+    }
+cardJug2.style.display= "none";
+    select = barJug2;
+    partidaPc2();
+    setTimeout(function () {
+        if (select < pc2) {
+
+            divDataGame.style.backgroundColor = "red";
+            divDataGame.textContent = "GANA LA PC";
+            disparo.style.display = "block";
+            ganapc++;
+        } else if (select > pc2) {
+
+            divDataGame.style.backgroundColor = "green";
+            divDataGame.textContent = "GANA JUGADOR";
+            ganaJug++;
+        } else {
+            divDataGame.style.backgroundColor = "black";
+            divDataGame.textContent = "EMPATE";
+        }
+
+    }, 50);
+
+    naipes--;
+    partidas++;
+
+    setTimeout(function () {
+        if (naipes === 0) {
+            divDataGame.style.backgroundColor = "black";
+            divDataGame.textContent = "FINALIZO EL JUEGO";
+            setTimeout(function () {
+                if (ganapc < ganaJug) {
+                    divDataGame.style.backgroundColor = "green";
+                    divDataGame.textContent = "GANA EL JUEGO: JUGADOR";
+                    reiniciar.style.display = "block";
+                }
+                if (ganapc > ganaJug) {
+                    divDataGame.style.backgroundColor = "red";
+                    divDataGame.textContent = "GANA EL JUEGO: PC";
+                    reiniciar.style.display = "block";
+                }
+            }, 1000); // Esperar 1 segundo antes de mostrar el resultado final
+        }
+    }, 1000); // Esperar 1 segundo después de mostrar el resultado de la partida
+
+}
+
+
+function partidaCard3() {
+igualesboton.style.display = "none";
+    switch (barJug3) {
+        case 1:
+            cardJug.style.backgroundImage = "url('ruedas/1.png')";
+            break;
+        case 2:
+            cardJug.style.backgroundImage = "url('ruedas/2.png')";
+            break;
+        case 3:
+            cardJug.style.backgroundImage = "url('ruedas/3.png')";
+            break;
+        case 4:
+            cardJug.style.backgroundImage = "url('ruedas/4.png')";
+            break;
+        case 5:
+            cardJug.style.backgroundImage = "url('ruedas/5.png')";
+            break;
+        case 6:
+            cardJug.style.backgroundImage = "url('ruedas/6.png')";
+            break;
+        case 7:
+            cardJug.style.backgroundImage = "url('ruedas/7.png')";
+            break;
+    }
+cardJug3.style.display= "none";
+    select = barJug3;
+    partidaPc3();
+    setTimeout(function () {
+        if (select < pc3) {
+            divDataGame.style.backgroundColor = "red";
+            divDataGame.textContent = "GANA LA PC";
+            disparo.style.display = "block";
+            ganapc++;
+        } else if (select > pc3) {
+            divDataGame.style.backgroundColor = "green";
+            divDataGame.textContent = "GANA JUGADOR";
+            ganaJug++;
+        } else {
+            divDataGame.style.backgroundColor = "black";
+            divDataGame.textContent = "EMPATE";
+        }
+
+    }, 50);
+
+    naipes--;
+    partidas++;
+
+    setTimeout(function () {
+        if (naipes === 0) {
+            divDataGame.style.backgroundColor = "black";
+            divDataGame.textContent = "FINALIZO EL JUEGO";
+            reiniciar.style.display = "block";
+            setTimeout(function () {
+                if (ganapc < ganaJug) {
+                    divDataGame.style.backgroundColor = "green";
+                    divDataGame.textContent = "GANA EL JUEGO: JUGADOR";
+                    reiniciar.style.display = "block";
+                }
+                if (ganapc > ganaJug) {
+                    divDataGame.style.backgroundColor = "red";
+                    divDataGame.textContent = "GANA EL JUEGO: PC";
+                    reiniciar.style.display = "block";
+                }
+            }, 1000); // Esperar 1 segundo antes de mostrar el resultado final
+        }
+    }, 1000); // Esperar 1 segundo después de mostrar el resultado de la partida
+
+}
+
+
+
+function realizarFusion() {
+
+  igualesboton.style.display= "none";
+    if (barJug1 === barJug2) {
+        fusionadajug = barJug1 + 2;
+        cardJug1.style.display= "none";
+    };
+
+    if (barJug2 === barJug3) {
+        fusionadajug = barJug2 + 2;
+        cardJug2.style.display= "none";
+    };
+
+    if (barJug1 === barJug3) {
+        fusionadajug = barJug1 + 2;
+        cardJug3.style.display= "none";
+    };
+
+  alert(fusionadajug);
+
+    switch (fusionadajug) {
+        case 3:
+            cardJug.style.backgroundImage = "url('ruedas/1.png')";
+            break;
+        case 4:
+            cardJug.style.backgroundImage = "url('ruedas/2.png')";
+            break;
+        case 5:
+            cardJug.style.backgroundImage = "url('ruedas/3.png')";
+            break;
+        case 6:
+            cardJug.style.backgroundImage = "url('ruedas/4.png')";
+            break;
+        case 7:
+            cardJug.style.backgroundImage = "url('ruedas/5.png')";
+            break;
+        case 8:
+            cardJug.style.backgroundImage = "url('ruedas/6.png')";
+            break;
+        case 9:
+            cardJug.style.backgroundImage = "url('ruedas/7.png')";
+            break;
+    }
+
+    partidaPc1();
+
+    setTimeout(function () {
+        if (select < pc1) {
+            divDataGame.style.backgroundColor = "red";
+            divDataGame.textContent = "GANA LA PC";
+            divDataGame.style.display = "block";
+            ganapc++;
+        } else if (select > pc1) {
+            divDataGame.style.backgroundColor = "green";
+            divDataGame.textContent = "GANA JUGADOR";
+            ganaJug++;
+        } else {
+            divDataGame.style.backgroundColor = "black";
+            divDataGame.textContent = "EMPATE";
+        }
+
+    }, 50);
+
+    naipes--;
+    partidas++;
+
+    setTimeout(function () {
+        if (naipes === 0) {
+            divDataGame.style.backgroundColor = "black";
+            divDataGame.textContent = "FINALIZO EL JUEGO";
+	    reiniciar.style.display = "block";
+            setTimeout(function () {
+                if (ganapc < ganaJug) {
+                    divDataGame.style.backgroundColor = "black";
+                    divDataGame.textContent = "GANA JUGADOR";
+                    reiniciar.style.display = "block";
+                }
+                if (ganapc > ganaJug) {
+                    divDataGame.style.backgroundColor = "black";
+                    divDataGame.textContent = "GANA PC";
+                    reiniciar.style.display = "block";
+                }
+            }, 1000); // Esperar 1 segundo antes de mostrar el resultado final
+        }
+    }, 2000); // Esperar 1 segundo después de mostrar el resultado de la partida
+
+}
+ function reiniciarPagina() {
+            location.reload(); // Esta función recarga la página
+        }
+
+     
+
+        </script>
+    </div>
+
+</body>
+
+</html>
