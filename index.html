@@ -48,27 +48,16 @@
     // Agregar un evento de teclado al documento con "keydown"
     document.addEventListener("keydown", manejarTecla);
 
-    function manejarTecla(event) {
-        switch(event.key) {
-            case "ArrowRight":
+    function tecladerecha() {
                 positionjug += 1;
                 actualizarPosicion();
-                break;
-            case "ArrowLeft":
+                break;}
+    function teclaizquierda() {
                 positionjug -= 1;
                 actualizarPosicion();
-                break;
-            case "Enter":
-                alert("Se presionó la tecla Enter. Valor actual: " + positionjug);
-                break;
-            default:
-                // Otro manejo de teclas si es necesario
-                break;
-        }
-    }
+                break;}
 </script>
 
-<!-- Elemento que se mueve cuando positionjug es igual a 1 -->
 <div id="elementoAnimado" class="elementoAnimado"></div>
 <div id="botonderecha" class="botonderecha"></div>
 
