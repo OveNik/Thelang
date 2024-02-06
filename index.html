@@ -51,6 +51,7 @@
     function tecladerecha() {
                 positionjug += 1;
                 actualizarPosicion();
+       alert("tecladerecha");
                 break;}
     function teclaizquierda() {
                 positionjug -= 1;
@@ -59,7 +60,11 @@
 </script>
 
 <div id="elementoAnimado" class="elementoAnimado"></div>
-<div id="botonderecha" class="botonderecha"></div>
+
+<div id="botonderecha" class="botonderecha"
+onclick="tecladerecha"></div>
+
+<div id="botonizquierda" class="botonderecha" onclick="teclaizquierda"></div>
 
 </body>
 </html>
