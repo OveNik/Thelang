@@ -7,8 +7,8 @@
     <style>
         .elementoAnimado {
             /* Estilos iniciales del elemento */
-            width: 50px;
-            height: 100px;
+            width: 70px;
+            height: 50px;
            background-image: url('f1car.png');
     background-size: contain; 
             position: absolute;
@@ -45,19 +45,26 @@
     let positionjug = 0;
 
     function actualizarPosicion() {
-        // Realiza acciones necesarias con la posición actual del jugador
-        console.log("Posición actual del jugador: " + positionjug);
-
-        // Comprueba si la posición es igual a 1 para mover el elemento
+     
         if (positionjug === 1) {
-            document.getElementById("elementoAnimado").style.transform = "translateX(100px)"; // Cambia la posición según tus necesidades
-        } else {
-            document.getElementById("elementoAnimado").style.transform = "translateX(0)"; // Vuelve a la posición inicial
-        }
+            document.getElementById("elementoAnimado").style.transform = "translateX(50px)"; // Cambia la posición según tus necesidades
+        } 
+if (positionjug === 2) {
+            document.getElementById("elementoAnimado").style.transform = "translateX(150px)"; // Cambia la posición según tus necesidades
+        } 
+
+if (positionjug === 3) {
+            document.getElementById("elementoAnimado").style.transform = "translateX(250px)"; // Cambia la posición según tus necesidades
+        } 
+if (positionjug < 1) {
+    positionjug=1;
+        } 
+
+if (positionjug > 3){
+    positionjug=3;
+        } 
     }
 
-    // Agregar un evento de teclado al documento con "keydown"
-    document.addEventListener("keydown", manejarTecla);
 
     function tecladerecha() {
                 positionjug += 1;
